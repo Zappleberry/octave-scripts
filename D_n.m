@@ -1,5 +1,6 @@
 function D = D_n(t, T_o, f, n)
-% This function accepts two arrays, t and f, in which f is the function, t is the domain of the function, and two constants, T_o and N, T_o is the period and n is the number of the term.
+% D = D_n(t, T_o, f, n)
+% This function accepts two arrays, t and f, in which f is the function, t is the domain of the function, and two constants, T_o and n, T_o is the period and n is the number of the term.
 % The output, D, is the exponential fourier coefficient.
 %
 % Vetted against sin(t) with interval 2pi.
