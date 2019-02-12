@@ -11,20 +11,27 @@ function R = reimann(t, f, index_a, index_b)
 % [dummy, index] = min(abs(t-T))
 % this has the fault of not returning all indexes that match, although this is not a issue for most time domains.
 
-	R = 0;
+	dt = t(index_a+1:index_b)-t(index_a:index_b-1);
+	df = f(index_a+1:index_b)-f(index_a:index_b-1);
+	A = f(index_a:index_b-1).*dt +0.5.*df.*dt;
+	R = sum(A);
 
-	for n = index_a:1:index_b-1
+	% Alternative use. Doesn't work as well or as quickly.
 
-		% Define the difference in t and f in the segment.
-		dt = t(n+1)-t(n);
-		df = f(n+1)-f(n);
+	%R = 0;
 
-		% define the area of the trapezoidal segment in the interval.
-		% This function should give a accurate area of the segment for all functions using numbers in ℂ.
-		A = f(n)*dt + 0.5*df*dt;
+	%for n = index_a:1:index_b-1
 
-		R = R+A;
+	%	% Define the difference in t and f in the segment.
+	%	dt = t(n+1)-t(n);
+	%	df = f(n+1)-f(n);
 
-	end
+	%	% define the area of the trapezoidal segment in the interval.
+	%	% This function should give a accurate area of the segment for all functions using numbers in ℂ.
+	%	A = f(n)*dt + 0.5*df*dt;
+
+	%	R = R+A;
+
+	%end
 
 end
