@@ -1,9 +1,10 @@
 function F = exp_fourier(t, t_o, T_o, f, N)
 %
-%-- F = exp_fourier(t, T_o, f, N)
+%-- F = exp_fourier(t, t_o, T_o, f, N)
 %
 % this function will return a array of same domain as f which is the exponential fourier series of f from -N to N.
 % - t is the time domain array
+% - t_o is the point of first occurance for the period. Doesn't work properly if this is left out. something to do with the exponential?
 % - T_o is the period of the function
 % - f is the function
 % - N is the 
