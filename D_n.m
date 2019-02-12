@@ -1,5 +1,6 @@
 function D = D_n(t, T_o, f, n)
-% D = D_n(t, T_o, f, n)
+%-- D = D_n(t, T_o, f, n)
+%
 % This function accepts two arrays, t and f, in which f is the function, t is the domain of the function, and two constants, T_o and n, T_o is the period and n is the number of the term.
 % The output, D, is the exponential fourier coefficient.
 %
@@ -23,6 +24,8 @@ function D = D_n(t, T_o, f, n)
 	integrand = f.*exp(-j.*n.*w_o.*t);
 
 	% Estimate the integral with a trapezoidal reimann sum.
+	% Alternatively can use trapz(x, y) but must limit the function to i periods, where i is a integer.
+	% It turned out to be easier to write my own reimann function.
 	D = (1/T_o).*reimann(t, integrand, starti(1), endi(1));
 	
 end

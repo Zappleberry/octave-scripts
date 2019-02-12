@@ -1,5 +1,6 @@
 function R = reimann(t, f, index_a, index_b)
-% R = reimann(t, f, index_a, index_b)
+%-- R = reimann(t, f, index_a, index_b)
+%
 % Takes a function and it's domain to integrate from index_a to index_b using trapezoidal Reimann sums.
 % Trapezoid area is defined as A = f(t)*dt + 0.5*df*dt.
 % This will give a accurate area regardless of function, change in function, or change in time being positive or negative.
