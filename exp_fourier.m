@@ -1,4 +1,4 @@
-function F = exp_fourier(t, T_o, f, N)
+function F = exp_fourier(t, t_o, T_o, f, N)
 %
 %-- F = exp_fourier(t, T_o, f, N)
 %
@@ -13,7 +13,7 @@ function F = exp_fourier(t, T_o, f, N)
 
 	for n = -N:N
 		% Generate the part of the fourier series at n
-		g = D_n(t, T_o, f, n).*exp(j.*n.*w_o.*t);
+		g = D_n(t, t_o, T_o, f, n).*exp(j.*n.*w_o.*t);
 		F = F+g;
 	end
 

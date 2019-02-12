@@ -1,5 +1,5 @@
-function D = D_n(t, T_o, f, n)
-%-- D = D_n(t, T_o, f, n)
+function D = D_n(t, t_o, T_o, f, n)
+%-- D = D_n(t, t_o, T_o, f, n)
 %
 % This function accepts two arrays, t and f, in which f is the function, t is the domain of the function, and two constants, T_o and n, T_o is the period and n is the number of the term.
 % The output, D, is the exponential fourier coefficient.
@@ -11,9 +11,9 @@ function D = D_n(t, T_o, f, n)
 	% endi = find(abs(t-T_o)<0.01)(1);
 
 	% Find the start and end of the periodic function
-	[dummy, starti] = min(abs(t));
-	[dummy, endi] = min(abs(t-T_o));
-	
+	[dummy, starti] = min(abs(t-t_o));
+	[dummy, endi] = min(abs(t-(t_o + T_o)));
+
 	% Remove the dummy variable to temporarily store the 
 	clear dummy;
 
